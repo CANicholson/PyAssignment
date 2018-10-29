@@ -6,9 +6,15 @@ def main(filename):
         with open(filename, 'r') as filestrings, open("names_abbrevs.txt", 'w') as fileabrevs:
             fullstring = filestrings.readline()
             while(fullstring!=""):
-                fullstring = fullstring.upper()
-                cleanedstring = fullstring.replace("'", "")
-                print(cleanedstring)
+                cleanedlist = cleaning(fullstring)
+                print(cleanedlist)
                 fullstring = filestrings.readline()
     else: 
         print("File is not a .txt. Please try again with a .txt file")
+
+def cleaning(unclean):
+    """Removes apostrophes, capitalizes and returns list of string"""
+    fullstring = unclean.upper()
+    capstring = fullstring.replace("'", "")
+    stringlist = capstring.split()
+    return stringlist
