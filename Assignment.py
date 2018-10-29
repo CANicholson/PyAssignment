@@ -36,5 +36,5 @@ def valueassign():
     with open("values.txt", "r") as letnumpair: 
         tempstore = letnumpair.readlines()
         tempo = [x.split() for x in tempstore]
-        values = {y[0]:y[1] for y in tempo}
+        values = {y[0]:int(y[1]) for y in tempo}
         return(values)
