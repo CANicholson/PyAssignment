@@ -3,10 +3,12 @@ def main(filename):
 
     The lower the score the better the acronym. The acronyms are then stored in an output file"""
     if filename.endswith(".txt"):
+        letterscores = valueassign()
         with open(filename, 'r') as filestrings, open("names_abbrevs.txt", 'w') as fileabrevs:
             fullstring = filestrings.readline()
             while(fullstring!=""):
                 cleanedlist = cleaning(fullstring)
+                scoredlist = scoring(cleanedlist, letterscores)
                 print(cleanedlist)
                 fullstring = filestrings.readline()
     else: 
@@ -18,3 +20,20 @@ def cleaning(unclean):
     capstring = fullstring.replace("'", "")
     stringlist = capstring.split()
     return stringlist
+
+def scoring(cleanedlist, letterscores):
+    """Iterate through characters and return a list of dictionaries.
+
+    The key is the acronym and the value is the score"""
+    acronDict = {}
+
+def valueassign():
+    """Sets the values of each letter. Source of values is values.txt
+    
+    Placed in a function in case the user wishes to modify the value of letters. Reg Ex's are used."""
+    import re
+    with open("values.txt", "r") as letnumpair: 
+        tempstore = letnumpair.readlines()
+        t = re.compile(r"")
+        values = {letter:num for }
+        return(tempstore)
