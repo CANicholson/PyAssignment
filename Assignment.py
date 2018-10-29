@@ -27,13 +27,14 @@ def scoring(cleanedlist, letterscores):
     The key is the acronym and the value is the score"""
     acronDict = {}
 
+    return ()
+
 def valueassign():
     """Sets the values of each letter. Source of values is values.txt
     
-    Placed in a function in case the user wishes to modify the value of letters. Reg Ex's are used."""
-    import re
+    Placed in a function in case the user wishes to modify the value of letters."""
     with open("values.txt", "r") as letnumpair: 
         tempstore = letnumpair.readlines()
-        t = re.compile(r"")
-        values = {letter:num for }
-        return(tempstore)
+        tempo = [x.split() for x in tempstore]
+        values = {y[0]:y[1] for y in tempo}
+        return(values)
