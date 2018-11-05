@@ -14,20 +14,30 @@ def main(filename):
     else: 
         print("File is not a .txt. Please try again with a .txt file")
 
+import re
+
 def cleaning(unclean):
-    """Removes apostrophes, capitalizes and returns list of string"""
+    """Removes apostrophes and non-alphanumeric characters, capitalizes and returns list of string"""
     fullstring = unclean.upper()
     capstring = fullstring.replace("'", "")
-    stringlist = capstring.split()
+    stripnanchar = re.compile('[^0-9a-zA-Z]+')
+    cleanedstring = stripnanchar.sub(' ', capstring)
+    stringlist = cleanedstring.split()
     return stringlist
 
 def scoring(cleanedlist, letterscores):
     """Iterate through characters and return a list of dictionaries.
 
     The key is the acronym and the value is the score"""
+    firstletter = cleanedlist[0]
+    for x in cleanedlist:
+        for i in range(len(x)):
+            if i == 0 and cleanedlist.index(x) == 0:
+                pass
+            else:
+                print("true")
     acronDict = {}
-
-    return ()
+    return (acronDict)
 
 def valueassign():
     """Sets the values of each letter. Source of values is values.txt
