@@ -29,13 +29,18 @@ def scoring(cleanedlist, letterscores):
     """Iterate through characters and return a list of dictionaries.
 
     The key is the acronym and the value is the score"""
-    firstletter = cleanedlist[0]
+    dictionary
+    firstletter = cleanedlist[0][0]
     for x in cleanedlist:
         for i in range(len(x)):
             if i == 0 and cleanedlist.index(x) == 0:
                 pass
             else:
-                print("true")
+                for j in range(1,len(x)):
+                    secondletter = x[j]
+                    for k in range(j, len(x)):
+                        thirdletter = x[k]
+                        
     acronDict = {}
     return (acronDict)
 
